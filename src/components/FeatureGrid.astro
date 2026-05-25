@@ -1,0 +1,24 @@
+---
+interface Feature {
+  title: string;
+  text: string;
+  items?: string[];
+}
+interface Props {
+  features: Feature[];
+}
+const { features } = Astro.props;
+---
+<div class="grid-3">
+  {features.map((feature) => (
+    <article class="card">
+      <h3>{feature.title}</h3>
+      <p>{feature.text}</p>
+      {feature.items && (
+        <ul class="clean">
+          {feature.items.map((item) => <li>{item}</li>)}
+        </ul>
+      )}
+    </article>
+  ))}
+</div>

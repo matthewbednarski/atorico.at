@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import CTA from '../components/CTA.astro';
+
+const problems = [
+  { title: 'Fragile input', text: 'A renamed column, missing value, invalid format, or inconsistent entry can quietly move downstream.' },
+  { title: 'Manual checking', text: 'Teams spend time repeating the same checks by hand and still miss issues.' },
+  { title: 'Late discovery', text: 'Errors are often noticed only after import, publishing, delivery, or handover.' }
+];
+
+const benefits = [
+  { title: 'Save time finding errors', text: 'Detect issues before import, publishing, or handover.' },
+  { title: 'Reduce review work', text: 'Spend less time repeating the same spreadsheet checks by hand.' },
+  { title: 'Improve QA', text: 'Make validation more consistent and easier to maintain across workflows.' }
+];
+---
+<BaseLayout title="EarlyBird" description="EarlyBird helps teams validate spreadsheet content, catch mistakes early, and reduce manual checking effort.">
+  <Hero
+    eyebrow="EarlyBird"
+    title="Quality control for spreadsheet-driven workflows."
+    lead="Validate spreadsheet content, catch mistakes early, and reduce the manual effort of checking business-critical files."
+    primaryHref="https://calendly.com/atorico/earlybird-demo"
+    primaryLabel="Request a demo"
+    secondaryHref="#how-it-works"
+    secondaryLabel="See how it works"
+  />
+
+  <section class="section alt">
+    <div class="container">
+      <p class="kicker">Problem</p>
+      <h2>Spreadsheets are flexible — and fragile.</h2>
+      <FeatureGrid features={problems} />
+    </div>
+  </section>
+
+  <section class="section" id="how-it-works">
+    <div class="container grid-2">
+      <div>
+        <p class="kicker">How it works</p>
+        <h2>Make spreadsheet input easier to trust.</h2>
+        <p>EarlyBird checks spreadsheet content against explicit OPA policies and returns feedback users can act on quickly.</p>
+        <ul class="clean">
+          <li>Validate spreadsheet content against explicit policies</li>
+          <li>Make input errors easy to find</li>
+          <li>Highlight problem cells clearly</li>
+          <li>Improve quality before import or publishing</li>
+        </ul>
+      </div>
+      <div class="visual-placeholder">
+        <div class="diagram">
+          <div>Spreadsheet input</div>
+          <div>OPA policies</div>
+          <div>Errors & warnings</div>
+          <div>Corrections</div>
+          <div>Downstream system</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <p class="kicker">Benefits</p>
+      <h2>Why teams use EarlyBird.</h2>
+      <FeatureGrid features={benefits} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <article class="card">
+        <h3>Where EarlyBird fits well</h3>
+        <ul class="clean">
+          <li>Product and catalog data</li>
+          <li>Translation sheets</li>
+          <li>Operational imports into ERP, CMS, PIM, finance, or internal tools</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Built for maintainable validation</h3>
+        <ul class="clean">
+          <li>Spreadsheet-integrated validation</li>
+          <li>Server-side rule evaluation</li>
+          <li>Reusable validation policies</li>
+          <li>Customer-specific rule sets where needed</li>
+          <li>Centralized validation logic using OPA</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <CTA title="The best demo starts with a real spreadsheet." text="Bring a spreadsheet that regularly causes checking effort, import issues, or quality problems." href="https://calendly.com/atorico/earlybird-demo" label="Book a demo" />
+</BaseLayout>

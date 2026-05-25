@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import CTA from '../components/CTA.astro';
+
+const services = [
+  {
+    title: 'Identity Management',
+    text: 'Connect existing identity systems and modern authentication standards into a coherent access model.',
+    items: ['AD / LDAP integration', 'ADFS and external Identity Provider integration', 'MFA with WebAuthn and OTP', 'OIDC implementation']
+  },
+  {
+    title: 'Kubernetes',
+    text: 'Design and operate Kubernetes environments with clear security and operational boundaries.',
+    items: ['Best practices', 'Tooling and ecosystem selection', 'RBAC design', 'Service account management']
+  },
+  {
+    title: 'DevOps',
+    text: 'Improve delivery speed and consistency with better automation, configuration, and deployment patterns.',
+    items: ['GitOps with FluxCD Toolkit', 'CI/CD pipelines', 'Configuration management', 'Secrets management']
+  }
+];
+---
+<BaseLayout title="Services" description="Atorico services for identity management, Kubernetes, and DevOps delivery workflows.">
+  <Hero
+    eyebrow="Services"
+    title="Secure platforms and reliable delivery processes."
+    lead="Focused consulting for identity management, Kubernetes operations, and DevOps workflows that are easier to run and maintain."
+    primaryHref="/contact/"
+    primaryLabel="Talk about a project"
+  />
+
+  <section class="section alt">
+    <div class="container">
+      <p class="kicker">What we help with</p>
+      <h2>Practical platform work.</h2>
+      <FeatureGrid features={services} />
+    </div>
+  </section>
+
+  <CTA title="Need help with a specific platform problem?" text="Describe the system, the friction, and the outcome you want. We can start from there." href="/contact/" label="Contact Atorico" />
+</BaseLayout>

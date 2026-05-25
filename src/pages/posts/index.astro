@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    title: 'Apps-Script Managing Images from Google Drive',
+    date: '2024-11-05',
+    description: 'Archived Ghost post placeholder. Migrate the full article from Ghost export when ready.'
+  },
+  {
+    title: 'Keycloak - Custom Browser Flow',
+    date: '2024-10-28',
+    description: 'Archived Ghost post placeholder. Migrate the full article from Ghost export when ready.'
+  },
+  {
+    title: 'Conftest: Path-based Validation by Using the Combine Flag',
+    date: '2021-05-13',
+    description: 'Archived Ghost post placeholder. Migrate the full article from Ghost export when ready.'
+  }
+];
+---
+<BaseLayout title="Posts" description="Technical posts from Atorico.">
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Posts</p>
+      <h1>Technical notes and articles.</h1>
+      <p class="lead">This page keeps the old Ghost blog structure available. Individual articles can be migrated from a Ghost export in a later step.</p>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="container post-list">
+      {posts.map((post) => (
+        <article class="card post-item">
+          <p class="kicker">{post.date}</p>
+          <h3>{post.title}</h3>
+          <p>{post.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

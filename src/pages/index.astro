@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import CTA from '../components/CTA.astro';
+
+const services = [
+  {
+    title: 'Identity Management',
+    text: 'Connect existing identity systems and modern authentication standards into a coherent access model.',
+    items: ['AD / LDAP integration', 'External identity providers', 'MFA with WebAuthn and OTP', 'OIDC implementation']
+  },
+  {
+    title: 'Kubernetes',
+    text: 'Design and operate Kubernetes environments with clear security and operational boundaries.',
+    items: ['Best practices', 'Tooling selection', 'RBAC design', 'Service account management']
+  },
+  {
+    title: 'DevOps',
+    text: 'Improve delivery speed and consistency with better automation, configuration, and deployment patterns.',
+    items: ['GitOps with FluxCD', 'CI/CD pipelines', 'Configuration management', 'Secrets management']
+  }
+];
+---
+<BaseLayout title="Atorico">
+  <Hero
+    eyebrow="Secure platforms · reliable delivery · spreadsheet quality"
+    title="Infrastructure and validation workflows that are easier to trust."
+    lead="Atorico helps teams build secure platforms, improve delivery processes, and validate spreadsheet-driven business workflows before errors spread downstream."
+    primaryHref="/contact/"
+    primaryLabel="Start a conversation"
+    secondaryHref="/earlybird/"
+    secondaryLabel="Explore EarlyBird"
+  />
+
+  <section class="section alt">
+    <div class="container">
+      <p class="kicker">Services</p>
+      <h2>Focused help for platform-heavy teams.</h2>
+      <FeatureGrid features={services} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div>
+        <p class="kicker">Product</p>
+        <h2>EarlyBird</h2>
+        <p class="lead">Quality control for spreadsheet-driven workflows.</p>
+        <p>EarlyBird helps teams validate spreadsheet content, catch mistakes early, and reduce the manual effort of checking business-critical files.</p>
+        <div class="actions"><a class="button" href="/earlybird/">See how it works</a></div>
+      </div>
+      <div class="card">
+        <h3>Typical spreadsheet problems</h3>
+        <ul class="clean">
+          <li>Columns get renamed</li>
+          <li>Required values are missing</li>
+          <li>Invalid formats slip in</li>
+          <li>Duplicate or inconsistent entries appear</li>
+          <li>Errors are noticed after import, publishing, or delivery</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Bring the workflow that causes friction." text="A short conversation is enough to see where better validation, automation, or platform design would help." href="/contact/" label="Contact Atorico" />
+</BaseLayout>

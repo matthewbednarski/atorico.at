@@ -35,6 +35,8 @@ After pushing to `main`, enable GitHub Pages with **GitHub Actions** as the sour
 
 ## Migration checklist
 
+- [ ] Create the GitHub repo, for example `matthewbednarski/atorico-site`
+- [ ] Push this starter
 - [ ] Enable GitHub Pages
 - [ ] Add production images/screenshots to `public/images`
 - [ ] Replace placeholder post list with migrated Ghost posts

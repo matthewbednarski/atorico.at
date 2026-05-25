@@ -1,0 +1,34 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  lead: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+const { eyebrow, title, lead, primaryHref, primaryLabel, secondaryHref, secondaryLabel } = Astro.props;
+---
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{title}</h1>
+      <p class="lead">{lead}</p>
+      <div class="actions">
+        {primaryHref && primaryLabel && <a class="button" href={primaryHref}>{primaryLabel}</a>}
+        {secondaryHref && secondaryLabel && <a class="button secondary" href={secondaryHref}>{secondaryLabel}</a>}
+      </div>
+    </div>
+    <div class="visual-placeholder" aria-hidden="true">
+      <div class="diagram">
+        <div>Spreadsheet</div>
+        <div>Validation</div>
+        <div>Feedback</div>
+        <div>Fixes</div>
+        <div>Systems</div>
+      </div>
+    </div>
+  </div>
+</section>

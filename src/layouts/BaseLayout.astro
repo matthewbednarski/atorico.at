@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Atorico helps teams build reliable software platforms, identity systems, and spreadsheet-driven workflows.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="logo" href="/">Atorico</a>
+        <div class="nav-links">
+          <a href="/earlybird/">EarlyBird</a>
+          <a href="/services/">Services</a>
+          <a href="/posts/">Posts</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>© {new Date().getFullYear()} Atorico</span>
+        <span><a href="/privacy-policy/">Privacy Policy</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
